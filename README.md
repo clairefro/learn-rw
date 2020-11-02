@@ -42,7 +42,7 @@ Becomes:
 ..com/ja/somedir/another
 ```
 
-The filename becomes the page slug. The language code because the meta language of the page and should match a valid [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+The filename becomes the page slug. The language code becomes the meta language of the page and should match a valid [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
 
 > Note on Chinese: figure out which language codes are suitable for traditional vs. simplified
 
@@ -50,7 +50,7 @@ The filename becomes the page slug. The language code because the meta language 
 
 In the future, `src/content/en` docs should be synced from select redwoodjs.com content.
 
-We are starting with just `TUTORIAL.md`.
+We will start with just `TUTORIAL.md`.
 
 ### Translation
 
@@ -62,7 +62,7 @@ We are starting with just `TUTORIAL.md`.
 
 In an effort to make getting started with Redwood more accessible to wider audiences, this site extracts 'core learning content' like tutorials so that it can be continuously localized. Kinda like https://www.learnstorybook.com/
 
-redwoodjs.com is the official site for Redwood and is thus the beacon of truth. Redwoodjs has much more goodies like news, cookbooks, roadmaps, contribution guidelines, and of course: [stickers](https://redwoodjs.com/stickers).
+[redwoodjs.com](https://redwoodjs.com/) is the official site for Redwood and is thus the beacon of truth. That site has much more goodies like news, cookbooks, roadmaps, contribution guidelines, and of course: [stickers](https://redwoodjs.com/stickers).
 
 ### Roadmap
 
