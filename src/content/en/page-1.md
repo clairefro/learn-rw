@@ -9,3 +9,8 @@ if (true) {
   console.log("think again")
 }
 ```
+
+```sh
+yarn install
+git init
+```
