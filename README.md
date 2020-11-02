@@ -22,9 +22,13 @@ src/
     en/
       page-1.md
       page-2.md
+      somedir/
+        another.md
     ja/
       page-1.md
       page-2.md
+      somedir/
+        another.md
 ```
 
 Becomes:
@@ -32,21 +36,41 @@ Becomes:
 ```
 ..com/en/page-1
 ..com/en/page-2
+..com/en/somedir/another
 ..com/ja/page-1
 ..com/ja/page-2
+..com/ja/somedir/another
 ```
 
 The filename becomes the page slug. The language code because the meta language of the page and should match a valid [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
 
 > Note on Chinese: figure out which language codes are suitable for traditional vs. simplified
 
+### Syncing English content
+
+In the future, `src/content/en` docs should be synced from select redwoodjs.com content.
+
+We are starting with just `TUTORIAL.md`.
+
 ### Translation
 
-Gitlocalize
+[Gitlocalize](https://gitlocalize.com/) will be used keep locales synced with the content in `src/content/en`.
+
+**Do not make direct PRs for translation to this repo.** All translation should be done through the Gitlocalize dashboard, which will generate PRs and notify when content has gone stale.
+
+### How is this different than redwoodjs.com?
+
+In an effort to make getting started with Redwood more accessible to wider audiences, this site extracts 'core learning content' like tutorials so that it can be continuously localized. Kinda like https://www.learnstorybook.com/
+
+redwoodjs.com is the official site for Redwood and is thus the beacon of truth. Redwoodjs has much more goodies like news, cookbooks, roadmaps, contribution guidelines, and of course: [stickers](https://redwoodjs.com/stickers).
 
 ### Roadmap
 
 - language switcher
+- handle untranslated content (default to EN?)
 - dynamic side menu navigation
+- UI string translation
 - SEO (react-helmet-async)
+- script for syncing `/content/en` with desired docs from redwoodjs.com
+- special handling for TUTORIAL.md (break long md file into several pages by titles)
 - style :)
