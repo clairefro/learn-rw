@@ -74,3 +74,4 @@ In an effort to make getting started with Redwood more accessible to wider audie
 - script for syncing `/content/en` with desired docs from redwoodjs.com
 - special handling for TUTORIAL.md (break long md file into several pages by titles)
 - style :)
+- search
