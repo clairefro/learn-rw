@@ -5,7 +5,7 @@ import "../styles/index.css"
 const Layout = ({ children }) => {
   return (
     <div>
-      <div className="max-w-screen-md container mx-auto">{children}</div>
+      <div className="max-w-screen-md container mx-auto p-6">{children}</div>
     </div>
   )
 }
