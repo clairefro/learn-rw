@@ -1,3 +1,6 @@
+const { config } = require("./config")
+const { parseNode } = require("./buildUtils")
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
@@ -17,19 +20,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  const parsedMdNodes = JSON.parse(
+  const normalizedNodes = JSON.parse(
     JSON.stringify(result.data.allMarkdownRemark.nodes)
   )
-  console.log({ parsedMdNodes })
   const docPage = require.resolve(`./src/templates/DocPage.js`)
 
-  parsedMdNodes.forEach(node => {
-    const path = node.fileAbsolutePath.match(/\/content(\/.+).md$/)[1]
-    console.log({ path })
-    // TODO: handle case where no lang prefix
-    const lang = path.match(/^\/(.+)\/.+/)[1]
-    const slug = path.match(/\/(.+)$/)[1]
+  console.log(`Building pages from src/${config.docsSourceDir}...`)
+  normalizedNodes.forEach(node => {
+    // skip page creation if not markdown file
+    if (!node.fileAbsolutePath.match(/.md$/)) return
 
+    const { path, lang, slug } = parseNode(node)
+    if (!path) {
+      return console.error(
+        `Error! unable to create page for: ${node.fileAbsolutePath}`
+      )
+    }
     createPage({
       path: path,
       component: docPage,
@@ -41,4 +47,5 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+  console.log(`Done building pages.`)
 }
