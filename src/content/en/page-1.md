@@ -10,7 +10,15 @@ if (true) {
 }
 ```
 
-```sh
+```shell
 yarn install
 git init
+```
+
+```graphql
+query DoesItWork($input: String!) {
+  doesItWork(input: $input) {
+    id
+  }
+}
 ```
