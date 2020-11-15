@@ -23,7 +23,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const normalizedNodes = JSON.parse(
     JSON.stringify(result.data.allMarkdownRemark.nodes)
   )
-  const docPage = require.resolve(`./src/templates/DocPage.tsx`)
+  const pageTemplate = require.resolve(`./src/templates/Page.tsx`)
 
   console.log(`Building pages from src/${config.docsSourceDir}...`)
   normalizedNodes.forEach(node => {
@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
     createPage({
       path: path,
-      component: docPage,
+      component: pageTemplate,
       context: {
         // additional data can be passed via context
         slug,

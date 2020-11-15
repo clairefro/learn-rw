@@ -10,7 +10,7 @@ interface PageQuery {
     }
   }
 }
-const DocPage: FC<PageProps & PageQuery> = ({ data, pageContext }) => {
+const Page: FC<PageProps & PageQuery> = ({ data, pageContext }) => {
   console.log({ pageContext })
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { rawMarkdownBody } = markdownRemark
@@ -28,4 +28,4 @@ export const pageQuery = graphql`
     }
   }
 `
-export default DocPage
+export default Page

@@ -8,7 +8,6 @@
     "strict": true,
     "noEmit": true,
     "allowJs": true,
-    "isolatedModules": true,
     "esModuleInterop": true,
     "noUnusedLocals": false,
     "moduleResolution": "node"

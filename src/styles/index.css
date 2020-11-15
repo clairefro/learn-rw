@@ -1,9 +1,8 @@
-/* Excluding tailwind base styles for now - need to resolve markdown html class vs className conflict */
-
 @import "./markdown.css";
 
-/* @tailwind base;
+/* required for tailwind */
+@tailwind base;
 
 @tailwind components;
 
-@tailwind utilities; */
+@tailwind utilities;

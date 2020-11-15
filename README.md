@@ -8,6 +8,12 @@ Bootstrapped with [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsb
 
 `yarn start` to build pages from `src/content`
 
+### Tech stack
+
+- Gatsby
+- Typescript
+- Tailwind
+
 ### How it works
 
 Page building logic can be found in `gatsby-node.js`.
@@ -63,6 +69,33 @@ We will start with just `TUTORIAL.md`.
 In an effort to make getting started with Redwood more accessible to wider audiences, this site extracts 'core learning content' like tutorials so that it can be continuously localized. Kinda like https://www.learnstorybook.com/
 
 [redwoodjs.com](https://redwoodjs.com/) is the official site for Redwood and is thus the beacon of truth. That site has much more goodies like news, cookbooks, roadmaps, contribution guidelines, and of course: [stickers](https://redwoodjs.com/stickers).
+
+### Accessing & updating selected language
+
+Content language can be selected from a dropdown in the navbar.
+
+`selectedLang` (get) and `changeLang` (set) are globally available via React Context API from `LanguageProvider`
+
+the `useLanguageContext()` hook can be used from any component to get the currently selected language.
+
+```tsx
+import { PageProps } from "gatsby"
+import React, { FC } from "react"
+import { useLanguageContext } from "../context/languageContext"
+
+const UselessComponent: FC<PageProps> = props => {
+  const { selectedLang, changeLang } = useLanguageContext()
+  console.log({ selectedLang }) //=> defaults to 'en'
+
+  return (
+    <div>
+      <button onClick={() => changeLang("fr")}>
+        Change language to French!
+      </button>
+    </div>
+  )
+}
+```
 
 ### Roadmap
 

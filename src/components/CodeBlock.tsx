@@ -20,5 +20,3 @@ export const CodeBlock: FC<Props> = ({ language, value }) => {
     </SyntaxHighlighter>
   )
 }
-
-export default CodeBlock
