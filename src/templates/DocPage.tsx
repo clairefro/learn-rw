@@ -2,7 +2,16 @@ import React, { FC } from "react"
 import { graphql, PageProps } from "gatsby"
 import { MarkdownParser } from "../components/MarkdownParser"
 
-const DocPage: FC<PageProps> = ({ data, pageContext }) => {
+interface PageQuery {
+  data: {
+    markdownRemark: {
+      id: string
+      rawMarkdownBody: string
+    }
+  }
+}
+const DocPage: FC<PageProps & PageQuery> = ({ data, pageContext }) => {
+  console.log({ pageContext })
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { rawMarkdownBody } = markdownRemark
   return (
@@ -12,7 +21,7 @@ const DocPage: FC<PageProps> = ({ data, pageContext }) => {
   )
 }
 export const pageQuery = graphql`
-  query($id: String!) {
+  query GetPageData($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       rawMarkdownBody

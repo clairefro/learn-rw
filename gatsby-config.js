@@ -17,6 +17,5 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-layout`,
-    `gatsby-plugin-codegen`,
   ],
 }
