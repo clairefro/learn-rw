@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React, { FC } from "react"
+import { graphql, PageProps } from "gatsby"
 import { MarkdownParser } from "../components/MarkdownParser"
 
-export default function DocPage({ data, pageContext }) {
+const DocPage: FC<PageProps> = ({ data, pageContext }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { rawMarkdownBody } = markdownRemark
   return (
@@ -19,3 +19,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export default DocPage

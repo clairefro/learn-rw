@@ -23,7 +23,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const normalizedNodes = JSON.parse(
     JSON.stringify(result.data.allMarkdownRemark.nodes)
   )
-  const docPage = require.resolve(`./src/templates/DocPage.js`)
+  const docPage = require.resolve(`./src/templates/DocPage.tsx`)
 
   console.log(`Building pages from src/${config.docsSourceDir}...`)
   normalizedNodes.forEach(node => {

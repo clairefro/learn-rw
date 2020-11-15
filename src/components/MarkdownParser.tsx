@@ -1,8 +1,13 @@
-import React from "react"
+import React, { FC } from "react"
 import Markdown from "react-markdown"
 import { CodeBlock } from "./CodeBlock"
 
-export const MarkdownParser = ({ source, className }) => {
+interface Props {
+  source: string
+  className?: string
+}
+
+export const MarkdownParser: FC<Props> = ({ source, className }) => {
   return (
     <Markdown
       source={source}

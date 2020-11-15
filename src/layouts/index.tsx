@@ -1,8 +1,9 @@
-import React from "react"
+import React, { FC } from "react"
+import { PageProps } from "gatsby"
 
 import "../styles/index.css"
 
-const Layout = ({ children }) => {
+const Layout: FC<PageProps> = ({ children }) => {
   return (
     <div>
       <div className="max-w-screen-md container mx-auto p-6">{children}</div>
