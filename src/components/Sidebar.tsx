@@ -72,7 +72,9 @@ export const Sidebar: FC = () => {
     ))
   return (
     <aside className="h-screen px-4 py-6 relative" style={{ width: "300px" }}>
-      <div className="fixed">{renderSidebarContent()}</div>
+      <div className="fixed" style={{ maxWidth: "300px" }}>
+        {renderSidebarContent()}
+      </div>
     </aside>
   )
 }
