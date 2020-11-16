@@ -11,8 +11,10 @@ interface PageQuery {
   }
 }
 const Page: FC<PageProps & PageQuery> = ({ data, pageContext }) => {
-  const { markdownRemark } = data
-  const { rawMarkdownBody } = markdownRemark
+  const {
+    markdownRemark: { rawMarkdownBody },
+  } = data
+
   return (
     <div>
       <MarkdownParser source={rawMarkdownBody} />

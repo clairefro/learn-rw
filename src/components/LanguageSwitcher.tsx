@@ -17,11 +17,13 @@ const options = [
 export const LanguageSwitcher: FC = () => {
   const { selectedLang: currLang, changeLang } = useLanguageContext()
   const { pathname } = useLocation()
+
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLang = e.target.value as Languages
     changeLang(selectedLang)
     naviateToLang(currLang, selectedLang, pathname)
   }
+
   return (
     <div>
       <select
