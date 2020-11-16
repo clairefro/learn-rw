@@ -151,22 +151,23 @@ const pathsToPages = (
 ): Page[] => {
   const results: Page[] = []
   paths.forEach(path => {
-    const prefixedPath = [lang, "/", path].join("")
+    const prefixedPath = ["/", lang, "/", path].join("")
     const foundIndex = queryResults.findIndex(obj =>
       obj.path.match(prefixedPath)
     )
     const foundIndexEn = queryResults.findIndex(obj =>
       obj.path.match(["en", "/", path].join(""))
     )
+
     let title: string
     let resolvedPath: string
     // case: page for this language exists
-    if (foundIndex > 0) {
+    if (foundIndex >= 0) {
       title = queryResults[foundIndex].title
       resolvedPath = queryResults[foundIndex].path
     }
     // if not, default to English
-    else if (foundIndexEn) {
+    else if (foundIndexEn >= 0) {
       title = "(🇬🇧)" + queryResults[foundIndexEn].title
       resolvedPath = queryResults[foundIndexEn].path
     } else {
