@@ -17,7 +17,6 @@ interface SidebarLinkPaths {
 // Articles will appear in the order of the paths array under each heading.
 // Paths must exactly match the markdown filepath without extension, starting from the first directory after the language
 // ex: "tutorial/welcome-to-redwood"
-
 const linkPaths: SidebarLinkPaths = {
   Tutorial: {
     sectionTitle: {
@@ -168,8 +167,8 @@ const pathsToPages = (
     }
     // if not, default to English
     else if (foundIndexEn) {
-      title = "(🇬🇧)" + queryResults[foundIndex].title
-      resolvedPath = queryResults[foundIndex].path
+      title = "(🇬🇧)" + queryResults[foundIndexEn].title
+      resolvedPath = queryResults[foundIndexEn].path
     } else {
       throw new Error(`Path not found when building the sidebar: ${path}`)
     }

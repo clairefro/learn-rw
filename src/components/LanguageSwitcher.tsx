@@ -1,21 +1,26 @@
 import React, { FC } from "react"
 import { useLanguageContext } from "../context/languageContext"
+import { useLocation } from "@reach/router"
+import { naviateToLang } from "../utils/navigateToLang"
 
 const options = [
   {
     value: "en",
-    label: "EN",
+    label: "🇬🇧 EN",
   },
   {
     value: "fr",
-    label: "FR",
+    label: "🇫🇷 FR",
   },
 ]
 
 export const LanguageSwitcher: FC = () => {
-  const { changeLang } = useLanguageContext()
+  const { selectedLang: currLang, changeLang } = useLanguageContext()
+  const { pathname } = useLocation()
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeLang(e.target.value as Languages)
+    const selectedLang = e.target.value as Languages
+    changeLang(selectedLang)
+    naviateToLang(currLang, selectedLang, pathname)
   }
   return (
     <div>
