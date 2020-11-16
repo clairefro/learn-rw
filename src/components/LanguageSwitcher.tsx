@@ -3,19 +3,19 @@ import { useLanguageContext } from "../context/languageContext"
 
 const options = [
   {
-    value: "fr",
-    label: "FR",
-  },
-  {
     value: "en",
     label: "EN",
+  },
+  {
+    value: "fr",
+    label: "FR",
   },
 ]
 
 export const LanguageSwitcher: FC = () => {
   const { changeLang } = useLanguageContext()
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    changeLang(e.target.value)
+    changeLang(e.target.value as Languages)
   }
   return (
     <div>

@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useState } from "react"
 
 interface LanguageContextState {
-  selectedLang: string
+  selectedLang: Languages
   changeLang: (lang: Languages) => void
 }
 
 const defaultState: LanguageContextState = {
   selectedLang: "en",
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
   changeLang: (lang: Languages) => {},
 }
 const LanguageContext = createContext<LanguageContextState>(defaultState)
@@ -32,4 +32,5 @@ export const LanguageContextProvider: any = ({ children }: any): any => {
 
 // TODO: better typing
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const useLanguageContext = (): any => useContext(LanguageContext)
+export const useLanguageContext = (): LanguageContextState =>
+  useContext(LanguageContext)

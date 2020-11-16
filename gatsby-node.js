@@ -25,27 +25,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   )
   const pageTemplate = require.resolve(`./src/templates/Page.tsx`)
 
-  console.log(`Building pages from src/${config.docsSourceDir}...`)
-  normalizedNodes.forEach(node => {
-    // skip page creation if not markdown file
-    if (!node.fileAbsolutePath.match(/.md$/)) return
+  if (normalizedNodes.length) {
+    console.log(`Building pages from src/${config.docsSourceDir}...`)
 
-    const { path, lang, slug } = parseNode(node)
-    if (!path) {
-      return console.error(
-        `Error! unable to create page for: ${node.fileAbsolutePath}`
-      )
-    }
-    createPage({
-      path: path,
-      component: pageTemplate,
-      context: {
-        // additional data can be passed via context
-        slug,
-        lang,
-        id: node.id,
-      },
+    normalizedNodes.forEach(node => {
+      // skip page creation if not markdown file
+      if (!node.fileAbsolutePath.match(/.md$/)) return
+
+      const { path, lang, slug } = parseNode(node)
+      if (!path) {
+        return console.error(
+          `Error! unable to create page for: ${node.fileAbsolutePath}`
+        )
+      }
+      createPage({
+        path: path,
+        component: pageTemplate,
+        context: {
+          // additional data can be passed via context
+          slug,
+          lang,
+          id: node.id,
+        },
+      })
     })
-  })
-  console.log(`Done building pages.`)
+    console.log(`Done building pages.`)
+  }
 }

@@ -11,8 +11,7 @@ interface PageQuery {
   }
 }
 const Page: FC<PageProps & PageQuery> = ({ data, pageContext }) => {
-  console.log({ pageContext })
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark } = data
   const { rawMarkdownBody } = markdownRemark
   return (
     <div>
