@@ -53,7 +53,7 @@ export const Sidebar: FC = () => {
 
   const renderSidebarContent = () =>
     sidebarObj[selectedLang].map(item => (
-      <section key={item.section}>
+      <section key={item.section} style={{ width: "250px" }}>
         <details open className="w-full">
           {" "}
           <summary className="font-semibold text-xl w-full my-2">
@@ -70,8 +70,11 @@ export const Sidebar: FC = () => {
       </section>
     ))
   return (
-    <aside className="h-screen px-4 py-6 relative" style={{ width: "300px" }}>
-      <div className="fixed" style={{ maxWidth: "300px" }}>
+    <aside
+      className="h-screen px-4 py-6 relative"
+      style={{ minWidth: "250px" }}
+    >
+      <div className="fixed " style={{ width: "inherit" }}>
         {renderSidebarContent()}
       </div>
     </aside>
