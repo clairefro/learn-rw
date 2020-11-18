@@ -6,11 +6,11 @@ import { naviateToLang } from "../utils/navigateToLang"
 const options = [
   {
     value: "en",
-    label: "🇬🇧 EN",
+    label: "English",
   },
   {
     value: "fr",
-    label: "🇫🇷 FR",
+    label: "Français",
   },
 ]
 
