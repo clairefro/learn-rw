@@ -137,12 +137,10 @@ In an effort to make getting started with Redwood more accessible to wider audie
 
 ### Roadmap
 
-- language switcher
-- handle untranslated content (default to EN?)
-- dynamic side menu navigation
+- add links to redwoodjs.com
+- redirects for unused pages (index, each doc category root)
 - UI string translation
+- sidebar: highlight active page (slug match)
 - SEO (react-helmet-async)
-- script for syncing `/content/en` with desired docs from redwoodjs.com
-- special handling for TUTORIAL.md (break long md file into several pages by titles)
 - style :)
 - search

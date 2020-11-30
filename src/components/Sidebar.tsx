@@ -26,6 +26,7 @@ const linkPaths: SidebarLinkPaths = {
     paths: [
       "tutorial/welcome-to-redwood",
       "tutorial/prerequisites",
+      "tutorial/installation-starting-development",
       // "tutorial/installation-and-starting-development",
       // "tutorial/our-first-page",
     ],
