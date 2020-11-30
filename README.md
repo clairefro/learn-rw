@@ -4,6 +4,9 @@ A multi-lingual docs site for learning RedwoodJS.
 
 Bootstrapped with [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
+**Doc translation status**
+[![gitlocalized ](https://gitlocalize.com/repo/5536/fr/badge.svg)](https://gitlocalize.com/repo/5536/fr?utm_source=badge)
+
 ### Run locally
 
 `yarn start` to build pages from `src/content`
