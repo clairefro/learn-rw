@@ -36,26 +36,20 @@ The filename becomes the page slug. The language code becomes the meta language 
 src/
   content/
     en/
-      page-1.md
-      page-2.md
-      somedir/
-        another.md
+      tutorial/
+        welcome.md
     ja/
-      page-1.md
-      page-2.md
-      somedir/
-        another.md
+      tutorial/
+        welcome.md
+
 ```
 
 Becomes:
 
 ```
-..com/en/page-1
-..com/en/page-2
-..com/en/somedir/another
-..com/ja/page-1
-..com/ja/page-2
-..com/ja/somedir/another
+..com/en/tutorial/welcome
+..com/ja/tutorial/welcome
+
 ```
 
 #### Sidebar
