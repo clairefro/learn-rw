@@ -5,6 +5,7 @@ A multi-lingual docs site for learning RedwoodJS.
 Bootstrapped with [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
 **Doc translation status**
+
 [![gitlocalized ](https://gitlocalize.com/repo/5536/fr/badge.svg)](https://gitlocalize.com/repo/5536/fr?utm_source=badge)
 
 ### Run locally
@@ -124,7 +125,7 @@ We will start with just `TUTORIAL.md`.
 ### Adding a new language
 
 1. Add gitlocalize workflow for that language, mapping source (English) content to directories prefixed with that language's code
-2. Add that language code to the `Language` union in `types.d.ts`
+2. Add that language code to the `Languages` union in `types.d.ts`
 3. Add UI string translations in components
 4. Add language code to `config.publishedLanguages` when ready to publish a language
 

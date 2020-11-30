@@ -25,8 +25,9 @@ const linkPaths: SidebarLinkPaths = {
     },
     paths: [
       "tutorial/welcome-to-redwood",
+      "tutorial/prerequisites",
       // "tutorial/installation-and-starting-development",
-      "tutorial/our-first-page",
+      // "tutorial/our-first-page",
     ],
   },
 }
@@ -172,7 +173,10 @@ const pathsToPages = (
     // if not, default to default lang with prefix indicating the page is untranslated
     else if (foundIndexDefault >= 0) {
       title = `(${config.defaultLang}) ` + queryResults[foundIndexDefault].title
-      resolvedPath = queryResults[foundIndexDefault].path
+      resolvedPath = queryResults[foundIndexDefault].path.replace(
+        new RegExp(`/${config.defaultLang}/`),
+        `/${lang}/`
+      )
     } else {
       throw new Error(`Path not found when building the sidebar: ${path}`)
     }

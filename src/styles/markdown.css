@@ -1,10 +1,10 @@
 #code {
   @apply bg-red-200 text-gray-900 text-sm px-1 rounded;
-	font-family: Fira Code, Fira Mono, Menlo, Monoco, monospace;
+  font-family: Fira Code, Fira Mono, Menlo, Monoco, monospace;
 }
 
 #link {
-  @apply text-red-700
+  @apply text-red-700;
 }
 
 .markdown {
@@ -29,7 +29,12 @@
 
   /* Move headings over because the anchor link will be hidden */
   @screen lg {
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-left: -1.1rem;
     }
   }
@@ -56,7 +61,7 @@
   }
 
   .highlighted-line {
-    @apply block -mx-4 px-4 bg-gray-800 block
+    @apply block -mx-4 px-4 bg-gray-800 block;
   }
 
   @screen lg {

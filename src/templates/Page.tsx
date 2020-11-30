@@ -1,7 +1,9 @@
-import React, { FC } from "react"
+import React, { FC, useContext } from "react"
 import { graphql, PageProps } from "gatsby"
 import { MarkdownParser } from "../components/MarkdownParser"
 import { SEO } from "../components/SEO"
+import { UntranslatedContentNotice } from "../components/UntranslatedContentNotice"
+import { IPageContext, PageContext } from "../context/pageContext"
 
 interface PageQuery {
   data: {
@@ -14,9 +16,11 @@ interface PageQuery {
     }
   }
 }
-const Page: FC<PageProps & PageQuery> = ({ data, pageContext }) => {
+const Page: FC<PageProps & PageQuery> = ({ data }) => {
+  const pageContext = useContext(PageContext) as IPageContext
   const { markdownRemark } = data
   const { headings, rawMarkdownBody } = markdownRemark
+  const { isUntranslated, lang } = pageContext
 
   const title = headings[0]?.value
 
@@ -24,6 +28,7 @@ const Page: FC<PageProps & PageQuery> = ({ data, pageContext }) => {
     <>
       <SEO title={title} />
       <div>
+        {isUntranslated && <UntranslatedContentNotice lang={lang} />}
         <MarkdownParser source={rawMarkdownBody} />
       </div>
     </>

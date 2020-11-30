@@ -1,6 +1,15 @@
 import React, { createContext, useContext } from "react"
 
-const PageContext = createContext({})
+// TODO: how to link this with context defined in gatsby-node.js?
+export interface IPageContext {
+  slug: string
+  lang: Languages
+  isUntranslated: boolean
+  id: string
+}
+
+// eslint-disable-next-line
+export const PageContext = createContext({})
 
 // TODO: better typing
 /* eslint-disable @typescript-eslint/no-explicit-any */
