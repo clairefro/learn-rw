@@ -25,7 +25,7 @@ const linkPaths: SidebarLinkPaths = {
     },
     paths: [
       "tutorial/welcome-to-redwood",
-      "tutorial/installation-and-starting-development",
+      // "tutorial/installation-and-starting-development",
       "tutorial/our-first-page",
     ],
   },
@@ -158,8 +158,8 @@ const pathsToPages = (
     const foundIndex = queryResults.findIndex(obj =>
       obj.path.match(prefixedPath)
     )
-    const foundIndexEn = queryResults.findIndex(obj =>
-      obj.path.match(["en", "/", path].join(""))
+    const foundIndexDefault = queryResults.findIndex(obj =>
+      obj.path.match([config.defaultLang, "/", path].join(""))
     )
 
     let title: string
@@ -169,10 +169,10 @@ const pathsToPages = (
       title = queryResults[foundIndex].title
       resolvedPath = queryResults[foundIndex].path
     }
-    // if not, default to default lang
-    else if (foundIndexEn >= 0) {
-      title = `(${config.defaultLang}) ` + queryResults[foundIndexEn].title
-      resolvedPath = queryResults[foundIndexEn].path
+    // if not, default to default lang with prefix indicating the page is untranslated
+    else if (foundIndexDefault >= 0) {
+      title = `(${config.defaultLang}) ` + queryResults[foundIndexDefault].title
+      resolvedPath = queryResults[foundIndexDefault].path
     } else {
       throw new Error(`Path not found when building the sidebar: ${path}`)
     }

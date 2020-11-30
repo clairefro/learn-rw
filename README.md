@@ -113,6 +113,11 @@ We will start with just `TUTORIAL.md`.
 
 **Do not make direct PRs for translation to this repo.** All translation should be done through the Gitlocalize dashboard, which will generate PRs and notify when content has gone stale.
 
+### Adding a new (English) page
+
+1. Add page to appropriate subfolder in `content/en`
+2. Add page to desired location in Sidebar component
+
 ### Adding a new language
 
 1. Add gitlocalize workflow for that language, mapping source (English) content to directories prefixed with that language's code
