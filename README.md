@@ -4,7 +4,9 @@ A multi-lingual docs site for learning RedwoodJS.
 
 Bootstrapped with [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
-**Doc translation status**
+### Translation status
+
+Know a language? Help us translate over at our [Gitlocalize repo](https://gitlocalize.com/repo/5536)
 
 [![gitlocalized ](https://gitlocalize.com/repo/5536/fr/badge.svg)](https://gitlocalize.com/repo/5536/fr?utm_source=badge)
 
@@ -105,17 +107,13 @@ const UselessComponent: FC<PageProps> = props => {
 }
 ```
 
-### Syncing English content
-
-In the future, `src/content/en` docs should be synced from select redwoodjs.com content.
-
-We will start with just `TUTORIAL.md`.
-
 ### Translation
 
-[Gitlocalize](https://gitlocalize.com/) will be used keep locales synced with the content in `src/content/en`.
+[Our Gitlocalize](https://gitlocalize.com/repo/5536) will be used keep locales synced with the content in `src/content/en`.
 
-**Do not make direct PRs for translation to this repo.** All translation should be done through the Gitlocalize dashboard, which will generate PRs and notify when content has gone stale.
+**Do not make direct PRs for translation to this repo.** All translation and edits to non-English content should be done through the Gitlocalize dashboard, which will generate PRs and notify when content has gone stale.
+
+Any missing translations for any given language will default to the English text with a little "help us translate!" warning and link.
 
 ### Adding a new (English) page
 
