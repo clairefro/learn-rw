@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react"
+import { config } from "../../config"
 
 interface LanguageContextState {
   selectedLang: Languages
@@ -15,7 +16,9 @@ const LanguageContext = createContext<LanguageContextState>(defaultState)
 // TODO: better typing
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const LanguageContextProvider: any = ({ children }: any): any => {
-  const [selectedLang, setSelectedLang] = useState<Languages>("en")
+  const [selectedLang, setSelectedLang] = useState<Languages>(
+    config.defaultLang as Languages
+  )
 
   return (
     <LanguageContext.Provider

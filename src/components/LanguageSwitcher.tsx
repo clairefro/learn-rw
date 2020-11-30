@@ -1,9 +1,12 @@
-import React, { FC } from "react"
+import React, { FC, useEffect } from "react"
 import { useLanguageContext } from "../context/languageContext"
 import { useLocation } from "@reach/router"
 import { naviateToLang } from "../utils/navigateToLang"
+import { getLangFromUrl } from "../utils/getLangFromUrl"
+import { config } from "../../config"
 
-const options = [
+// Note: lang values must match language codes defined in published languages
+const options: { value: Languages; label: string }[] = [
   {
     value: "en",
     label: "English",
@@ -14,9 +17,22 @@ const options = [
   },
 ]
 
+const publishedOptions = options.filter(o =>
+  config.publishableLangs.includes(o.value)
+)
+
 export const LanguageSwitcher: FC = () => {
   const { selectedLang: currLang, changeLang } = useLanguageContext()
   const { pathname } = useLocation()
+
+  const langFromUrl = getLangFromUrl()
+
+  // on mount set to lang to url lang
+  useEffect(() => {
+    if (currLang !== langFromUrl) {
+      changeLang(langFromUrl)
+    }
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLang = e.target.value as Languages
@@ -31,8 +47,9 @@ export const LanguageSwitcher: FC = () => {
         name="language-switcher"
         id="language-switcher"
         className="p-1"
+        defaultValue={langFromUrl}
       >
-        {options.map((o, i) => (
+        {publishedOptions.map((o, i) => (
           <option key={i} value={o.value}>
             {o.label}
           </option>

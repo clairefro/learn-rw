@@ -127,7 +127,8 @@ We will start with just `TUTORIAL.md`.
 1. Add gitlocalize workflow for that language, mapping source (English) content to directories prefixed with that language's code
 2. Add that language code to the `Languages` union in `types.d.ts`
 3. Add UI string translations in components
-4. Add language code to `config.publishedLanguages` when ready to publish a language
+4. Add lang to `LanguageSwitcher` options
+5. Add language code to `config.publishedLanguages` when ready to publish a language
 
 ### How is this different than redwoodjs.com?
 
@@ -135,12 +136,16 @@ In an effort to make getting started with Redwood more accessible to wider audie
 
 [redwoodjs.com](https://redwoodjs.com/) is the official site for Redwood and is thus the beacon of truth. That site has much more goodies like news, cookbooks, roadmaps, contribution guidelines, and of course: [stickers](https://redwoodjs.com/stickers).
 
-### Roadmap
+### Todos
 
 - add links to redwoodjs.com
 - redirects for unused pages (index, each doc category root)
 - UI string translation
 - sidebar: highlight active page (slug match)
 - SEO (react-helmet-async)
+- responsive sidebar and nav
 - style :)
 - search
+- "Next" button to navigate to next item in sidebar
+- 404 page
+- better favicon
