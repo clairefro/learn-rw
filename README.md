@@ -130,6 +130,7 @@ In an effort to make getting started with Redwood more accessible to wider audie
 
 ### Todos
 
+- get iframes to show up (a matter of tailwind styling)
 - add links to redwoodjs.com
 - redirects for unused pages (index, each doc category root)
 - UI string translation
