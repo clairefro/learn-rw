@@ -134,7 +134,7 @@ const buildSidebarLinks = (
   queryResults: SidebarDataQueryResult[]
 ): FinalSideBarLinkObj => {
   // TODO: dynamically populate the languages
-  const langs: Languages[] = ["en", "fr"]
+  const langs = config.publishableLangs as Languages[]
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sidebarLinks: any = {}
@@ -169,9 +169,9 @@ const pathsToPages = (
       title = queryResults[foundIndex].title
       resolvedPath = queryResults[foundIndex].path
     }
-    // if not, default to English
+    // if not, default to default lang
     else if (foundIndexEn >= 0) {
-      title = "(🇬🇧)" + queryResults[foundIndexEn].title
+      title = `(${config.defaultLang}) ` + queryResults[foundIndexEn].title
       resolvedPath = queryResults[foundIndexEn].path
     } else {
       throw new Error(`Path not found when building the sidebar: ${path}`)

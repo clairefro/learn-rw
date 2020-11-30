@@ -2,7 +2,7 @@ const { config } = require("./config")
 
 const getRelativePath = absolutePath => {
   const relPathMatch = absolutePath.match(
-    new RegExp(`/${config.docsSourceDir}(\/.+).md$`)
+    new RegExp(`/${config.docsSourceDir}(/.+).md$`)
   )
   if (relPathMatch) {
     return relPathMatch[1]
@@ -13,8 +13,8 @@ const getRelativePath = absolutePath => {
 }
 
 const getLang = path => {
-  let lang = "en" // default
-  const langPrefixMatches = path.match(/^\/(.+)\/.+/)
+  let lang = config.defaultLang
+  const langPrefixMatches = path.match(/^\/([\w-]+)\//)
   if (langPrefixMatches) {
     return langPrefixMatches[1]
   } else {
@@ -23,8 +23,10 @@ const getLang = path => {
   }
 }
 
+// example path: '/en/tutorial/welcome-to-redwood'
+// example slug: 'welcome-to-redwood'
 const getSlug = path => {
-  const slugMatch = path.match(/\/(.+)\.?.+$/)
+  const slugMatch = path.match(/\/([\w-+!@#$%^&*()=_?><]+)$/)
   if (slugMatch) {
     return slugMatch[1]
   } else {

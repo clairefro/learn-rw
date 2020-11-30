@@ -113,6 +113,13 @@ We will start with just `TUTORIAL.md`.
 
 **Do not make direct PRs for translation to this repo.** All translation should be done through the Gitlocalize dashboard, which will generate PRs and notify when content has gone stale.
 
+### Adding a new language
+
+1. Add gitlocalize workflow for that language, mapping source (English) content to directories prefixed with that language's code
+2. Add that language code to the `Language` union in `types.d.ts`
+3. Add UI string translations in components
+4. Add language code to `config.publishedLanguages` when ready to publish a language
+
 ### How is this different than redwoodjs.com?
 
 In an effort to make getting started with Redwood more accessible to wider audiences, this site extracts 'core learning content' like tutorials so that it can be continuously localized. Kinda like https://www.learnstorybook.com/
