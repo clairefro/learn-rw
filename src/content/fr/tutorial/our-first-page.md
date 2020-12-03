@@ -2,7 +2,9 @@
 
 Donnons à nos utilisateurs quelque chose de plus à contempler que la page d'accueil de Redwood. Utilisons la commande `redwood` pour créer une première page :
 
-    yarn redwood generate page home /
+```
+yarn redwood generate page home /
+```
 
 Cette commande fait les choses suivantes :
 
@@ -11,9 +13,8 @@ Cette commande fait les choses suivantes :
 - Création d’un fichier Storybook `web/src/pages/HomePage/HomePage.stories.js`. Storybook est un outil formidable pour développer efficacement et organiser vos composants. Si vous souhaitez en savoir plus jetez un oeuil à ce [sujet sur le forum Redwood](https://community.redwoodjs.com/t/how-to-use-the-new-storybook-integration-in-v0-13-0/873) pour apprendre comment l’utiliser.
 - Ajout d’une `<Route>` dans `web/src/Routes.js` qui fait correspondre le chemin `/` à la nouvelle page _HomePage_.
 
-> **Automatic import of pages in Routes file**
-> 
-> **Import automatique des pages dans le fichier Routes** Si vous regardez dans Routes, vous constaterez mention d'un composant, `HomePage`, qui n'est présent nulle part ailleurs. Redwood importe automatiquement toutes les pages dans le fichier Routes puisque nous aurons besoin de toutes les référencer de toute façon. Cela permet de s'épargner un `import` massif qui viendrait encombrer le fichier Routes.
+> **Import automatique des pages dans le fichier Routes**
+> Si vous regardez dans Routes, vous constaterez mention d'un composant, `HomePage`, qui n'est présent nulle part ailleurs. Redwood importe automatiquement toutes les pages dans le fichier Routes puisque nous aurons besoin de toutes les référencer de toute façon. Cela permet de s'épargner un `import` massif qui viendrait encombrer le fichier Routes.
 
 En réalité, cette page est déjà active (et votre navigateur l’a rechargée pour vous) :
 
